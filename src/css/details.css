@@ -18,3 +18,15 @@
 .details-isp-container {
   padding-bottom: 0;
 }
+
+.details-title {
+  color: var(--DarkGray);
+  font-size: .6em;
+  font-weight: var(--MedWeight);
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.details-data {
+  font-weight: var(--MedWeight);
+}

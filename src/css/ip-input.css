@@ -8,10 +8,16 @@
   border: 0;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
+  padding-left: 24px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-family: var(--FontFamily);
+  font-weight: var(--RegWeight);
+  letter-spacing: 1px;
 }
 
 .ip-input::placeholder {
-  padding-left: 24px;
+  padding-left: 0px;
 }
 
 .ip-submit {
