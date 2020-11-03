@@ -1,0 +1,20 @@
+.details-container {
+  width: 100%;
+  position: relative;
+  bottom: -24px;
+}
+
+.details-inner-container {
+  background-color: #fff;
+  border-radius: 15px;
+  text-align: center;
+  padding: 24px 0;
+}
+
+.details-data-container {
+  padding-bottom: 24px;
+}
+
+.details-isp-container {
+  padding-bottom: 0;
+}

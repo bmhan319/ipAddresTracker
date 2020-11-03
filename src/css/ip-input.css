@@ -1,0 +1,28 @@
+.ip-form {
+  width: 100%;
+  display: flex;
+}
+
+.ip-input {
+  width: 82%;
+  border: 0;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.ip-input::placeholder {
+  padding-left: 24px;
+}
+
+.ip-submit {
+  width: 60px;
+  height: 60px;
+  background-color: #000;
+  border: 0;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-image: url('../img/icon-arrow.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
