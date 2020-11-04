@@ -2,12 +2,17 @@ import React, { Component } from 'react'
 import { MapContainer, TileLayer } from "react-leaflet";
 
 class LeafMap extends Component {
-  render() {
-    let array = [this.props.state.lat, this.props.state.long]
+  componentDidMount() {
+    let position = [this.props.state.lat, this.props.state.long]
+    document.getElementById('myMap').removeAttribute('center', position)
+    document.getElementById('myMap').setAttribute('center', position)
+  }
 
+  render() {
+    let position = [this.props.state.lat, this.props.state.long]
     return (
       <div className="mapContainer">
-        <MapContainer id="myMap" center={array} zoom={25}>
+        <MapContainer id="myMap" center={position} zoom={this.props.state.zoom} scrollWheelZoom={false}>
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

@@ -7,7 +7,7 @@ export default function Header(props) {
     <div>
       <div className="head-container">
         <h1 className="head-title">IP Address Tracker</h1>
-        <IpInput />
+        <IpInput handleSubmit={props.handleSubmit} handleInput={props.handleInput}/>
         <Details state={props.state} />
       </div>
     </div>

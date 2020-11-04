@@ -16,7 +16,9 @@ class App extends Component {
     timeZone: '-05:00',
     isp: 'SpaceX Starlink',
     lat: 45.4,
-    long: -75.7
+    long: -75.7,
+    zoom: 20,
+    searchValue: 44
   }
 
   isLocation = () => {
@@ -28,16 +30,28 @@ class App extends Component {
       timeZone: '-07:00',
       isp: 'Google LLC',
       lat: 37.40599,
-      long: -122.078514
+      long: -122.078514,
+      zoom: 25
     })
-    console.log(this.state)
   }
 
+  handleInput = (e) => {
+    e.preventDefault()
+    this.setState({
+      searchValue: e.target.value,
+      lat: e.target.value
+    })
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(this.state.searchValue)
+  }
 
   render() {
     return (
       <div className="App">
-        <Header state={this.state} />
+        <Header state={this.state} handleInput={this.handleInput} handleSubmit={this.handleSubmit} />
         <LeafMap state={this.state} />
         <button onClick={ ()=>{ this.isLocation() } }>push</button>
       </div> 
