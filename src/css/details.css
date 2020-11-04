@@ -2,6 +2,7 @@
   width: 100%;
   position: relative;
   bottom: -24px;
+  z-index: 10;
 }
 
 .details-inner-container {
