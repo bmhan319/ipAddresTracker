@@ -35,6 +35,7 @@
 @media only screen and (min-width: 800px) {
   .details-container {
     width: 90%;
+    max-width: 900px;
     margin: 0 auto;
     bottom: -50px;
     left: 50%;
@@ -67,6 +68,7 @@
 @media only screen and (min-width: 1440px) {
   .details-container {
     width: 77%;
+    max-width: none;
     bottom: -70px;
   }
 

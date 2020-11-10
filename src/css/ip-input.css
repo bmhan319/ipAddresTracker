@@ -37,6 +37,7 @@
 @media only screen and (min-width: 800px) {
   .ip-form {
     width: 60%;
+    max-width: 600px;
     margin: 0 auto;
   }
 
@@ -46,8 +47,9 @@
   }
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1440px) {
   .ip-form {
     width: 40%;
+    max-width: none;
   }
 }
