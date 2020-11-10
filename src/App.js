@@ -15,10 +15,11 @@ class App extends Component {
     postalCode: 10001,
     timeZone: '-05:00',
     isp: 'SpaceX Starlink',
-    lat: 45.4,
-    long: -75.7,
-    zoom: 20,
-    searchValue: undefined
+    lat: 40.650002,
+    long: -73.949997,
+    zoom: 13,
+    searchValue: undefined,
+    counter: 0
   }
 
   handleInput = (e) => {
@@ -37,17 +38,10 @@ class App extends Component {
       postalCode: 94043,
       timeZone: '-07:00',
       isp: 'Google LLC',
-      lat: 37.40599,
-      long: -122.078514,
-      zoom: 25
+      lat: 37.386051,
+      long: -122.083855,
+      counter: this.counter++
     })
-    console.log(this.state.lat)
-    console.log(this.state.searchValue)
-  }
-
-  componentDidMount() {
-    console.log('componentDidMount', this.state.lat)
-    console.log('componentDidMount',this.state.searchValue)
   }
 
   render() {

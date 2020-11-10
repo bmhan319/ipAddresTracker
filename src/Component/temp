@@ -18,3 +18,12 @@ class LeafMap extends Component {
 }
 
 export default LeafMap;
+
+//import GoogleMap from './Component/GoogleMap'
+//import './css/googleMap.css'
+<GoogleMap state={this.state} />
+
+//import LeafMap from './Component/LeafMap'
+//import './css/leafmap.css'
+<LeafMap state={this.state} />
+

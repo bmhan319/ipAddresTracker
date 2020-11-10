@@ -5,7 +5,7 @@ class LeafMap extends Component {
   render() {
     let position = [this.props.state.lat, this.props.state.long]
     return (
-      <div className="mapContainer">
+      <div key={this.props.state.counter} className="mapContainer">
         <MapContainer id="myMap" center={position} zoom={this.props.state.zoom} scrollWheelZoom={false}>
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
