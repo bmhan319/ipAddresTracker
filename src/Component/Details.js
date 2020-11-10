@@ -11,7 +11,7 @@ export default function Details(props) {
 
         <div className="details-data-container details-location-container">
           <p className="details-title details-location-title">LOCATION</p>
-          <h3 className="details-data details-location-data">{props.state.city}, {props.state.region} {props.state.postalCode}</h3>
+          <h3 className="details-data details-location-data">{props.state.city}, <br/>{props.state.region} {props.state.postalCode}</h3>
         </div>
 
         <div className="details-data-container details-timezone-container">

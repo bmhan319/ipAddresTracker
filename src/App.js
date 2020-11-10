@@ -18,10 +18,18 @@ class App extends Component {
     lat: 45.4,
     long: -75.7,
     zoom: 20,
-    searchValue: 44
+    searchValue: undefined
   }
 
-  isLocation = () => {
+  handleInput = (e) => {
+    e.preventDefault()
+    this.setState({
+      searchValue: e.target.value
+    })
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault()
     this.setState({
       ipAddress: '8.8.8.8',
       city: 'Mountain View',
@@ -33,19 +41,13 @@ class App extends Component {
       long: -122.078514,
       zoom: 25
     })
-  }
-
-  handleInput = (e) => {
-    e.preventDefault()
-    this.setState({
-      searchValue: e.target.value,
-      lat: e.target.value
-    })
-  }
-
-  handleSubmit = (e) => {
-    e.preventDefault()
+    console.log(this.state.lat)
     console.log(this.state.searchValue)
+  }
+
+  componentDidMount() {
+    console.log('componentDidMount', this.state.lat)
+    console.log('componentDidMount',this.state.searchValue)
   }
 
   render() {
@@ -53,7 +55,6 @@ class App extends Component {
       <div className="App">
         <Header state={this.state} handleInput={this.handleInput} handleSubmit={this.handleSubmit} />
         <LeafMap state={this.state} />
-        <button onClick={ ()=>{ this.isLocation() } }>push</button>
       </div> 
     )
   }

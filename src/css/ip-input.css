@@ -4,7 +4,7 @@
 }
 
 .ip-input {
-  width: 82%;
+  width: 100%;
   border: 0;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
@@ -32,4 +32,22 @@
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
+}
+
+@media only screen and (min-width: 800px) {
+  .ip-form {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .ip-input::placeholder {
+    color: var(--DarkGray);
+    font-size: .95em;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .ip-form {
+    width: 40%;
+  }
 }
