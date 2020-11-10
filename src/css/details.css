@@ -44,7 +44,6 @@
 
   .details-inner-container {
     display: flex;
-    text-align: left;
     padding: 24px 0;
   }
 
@@ -73,6 +72,7 @@
 
   .details-inner-container {
     padding: 36px 0;
+    text-align: left;
   }
 
   .details-data-container {
