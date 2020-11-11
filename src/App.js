@@ -32,8 +32,9 @@ class App extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
     if (this.state.searchValue === "") {
-      console.log('error')
+      document.querySelector('.ip-form').classList.add('input-error')
     } else {
+      document.querySelector('.ip-form').classList.remove('input-error')
       this.callApi(this.state.searchValue)
     }
   }
