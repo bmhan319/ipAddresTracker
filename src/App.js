@@ -19,9 +19,10 @@ class App extends Component {
     long: "",
     zoom: 13,
     searchValue: "",
-    counter: 0
+    counter: 0  //Counter is needed to add a changing key in the mapContainer in order to have component remount with each state change.
   }
 
+  //Puts user input into the state
   handleInput = (e) => {
     e.preventDefault()
     this.setState({
@@ -29,6 +30,8 @@ class App extends Component {
     })
   }
 
+  //Handles data on hitting submit button
+  //Calls API function
   handleSubmit = (e) => {
     e.preventDefault()
     if (this.state.searchValue === "") {
@@ -39,6 +42,7 @@ class App extends Component {
     }
   }
 
+  //Calls GeoLocation API and populates State with returned data
   callApi = async (ip) => {
     const url = `https://geo.ipify.org/api/v1?apiKey=${process.env.REACT_APP_GEOLOCATION_API_KEY}&ipAddress=${ip}`
     const call = await fetch(url)
@@ -56,10 +60,12 @@ class App extends Component {
     })
   }
 
+  //LifeCycle method call function on page load
   componentDidMount () {
     window.addEventListener('load', this.onLoad)
   }
 
+  //This call Ipapi API on initial page load to populate users location data on page
   onLoad = async () => {
     const ip = 'https://ipapi.co/json/'
     const call = await fetch(ip)
