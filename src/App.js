@@ -10,15 +10,15 @@ import './css/leafmap.css'
 class App extends Component {
   state = {
     ipAddress: '192.212.174.101',
-    city: 'Brooklyn',
-    region: 'NY',
-    postalCode: 10001,
-    timeZone: '-05:00',
-    isp: 'SpaceX Starlink',
-    lat: 40.650002,
-    long: -73.949997,
+    city: 'Rosemead (Garvey)',
+    region: 'California',
+    postalCode: "91770",
+    timeZone: "-08:00",
+    isp: "Southern California Edison",
+    lat: 34.0614,
+    long: -118.08162,
     zoom: 13,
-    searchValue: undefined,
+    searchValue: "",
     counter: 0
   }
 
@@ -31,16 +31,28 @@ class App extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
+    if (this.state.searchValue === "") {
+      console.log('error')
+    } else {
+      this.callApi(this.state.searchValue)
+    }
+  }
+
+  callApi = async (ip) => {
+    const url = `https://geo.ipify.org/api/v1?apiKey=${process.env.REACT_APP_GEOLOCATION_API_KEY}&ipAddress=${ip}`
+    const call = await fetch(url)
+    const data = await call.json()
+    console.log(data)
     this.setState({
-      ipAddress: '8.8.8.8',
-      city: 'Mountain View',
-      region: 'California',
-      postalCode: 94043,
-      timeZone: '-07:00',
-      isp: 'Google LLC',
-      lat: 37.386051,
-      long: -122.083855,
-      counter: this.counter++
+      ipAddress: this.state.searchValue,
+      city: data.location.city,
+      region: data.location.region,
+      postalCode: data.location.postalCode,
+      timeZone: data.location.timezone,
+      isp: data.isp,
+      lat: data.location.lat,
+      long: data.location.lng,
+      counter: data.location.geonameId
     })
   }
 
